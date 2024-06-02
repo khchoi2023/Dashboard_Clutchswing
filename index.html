@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--/ TITLE /-->
+    <title>Clutch Swing Dashboard</title>
+    
+    <script>
+        function refreshOnLoad() {
+            if (!sessionStorage.getItem('refreshed')) {
+                // 세션 스토리지에 새로고침 여부 저장
+                sessionStorage.setItem('refreshed', 'true');
+                // 현재 시간의 타임스탬프를 쿼리 파라미터로 추가하여 새로고침
+                var currentUrl = window.location.href;
+                var separator = currentUrl.includes('?') ? '&' : '?';
+                var newUrl = currentUrl + separator + 'refresh=' + new Date().getTime();
+                window.location.href = newUrl;
+            }
+        }
+
+        window.onload = refreshOnLoad;
+    </script>
+
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #333;
+            color: white;
+            height: 100vh;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .sidebar img {
+            width: 100px;
+            margin-bottom: 30px;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 10px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .dashboard-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .charts {
+            display: flex;
+            justify-content: space-around;
+        }
+        .chart {
+            width: 45%;
+        }
+        .additional-charts {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .additional-chart {
+            flex: 1;
+            margin: 0 5px;
+        }
+        .donut-chart {
+            flex: 2;
+        }
+        .signal-chart {
+            flex: 9;
+        }
+    </style>
+</head>
+<body>
+
+
+    <!--/ SIDE BAR /-->
+    <div class="sidebar">
+        <img src="logo.png" alt="Logo">
+        <a href="#" onclick="showDashboard('gold')">Gold</a>
+        <a href="#" onclick="showDashboard('sp500')">S&P 500</a>
+        <a href="#" onclick="showDashboard('bitcoin')">Bitcoin</a>
+    </div>
+
+
+
+    <div class="content">
+        
+        <!--/ GOLD DASHBOARD /-->
+        <div id="gold" class="dashboard">
+            <h2 class="dashboard-title">Clutch Swing Dashboard - Gold</h2>
+            <div class="charts">
+                <img src="gold_backtest.png" alt="Gold Chart 1" class="chart">
+                <img src="gold_close_vol.png" alt="Gold Chart 2" class="chart">
+            </div>
+            
+            <div class="additional-charts">
+                <img src="gold_mlr_donut_annual.png" alt="Donut Chart 1" class="additional-chart donut-chart">
+                <img src="gold_mlr_donut_monthly.png" alt="Donut Chart 2" class="additional-chart donut-chart">
+                <img src="gold_mlr_donut_weekly.png" alt="Donut Chart 3" class="additional-chart donut-chart">
+                <img src="gold_latest_signal.png" alt="Signal Chart" class="additional-chart signal-chart">
+            </div>
+            
+            <div class="additional-charts">
+                <img src="gold_mgr_donut_annual.png" alt="Donut Chart 1" class="additional-chart donut-chart">
+                <img src="gold_mgr_donut_monthly.png" alt="Donut Chart 2" class="additional-chart donut-chart">
+                <img src="gold_mgr_donut_weekly.png" alt="Donut Chart 3" class="additional-chart donut-chart">
+                <img src="gold_final_return_bar.png" alt="Signal Chart" class="additional-chart signal-chart">
+            </div>
+            
+            <div class="additional-charts">
+                <img src="gold_final_trade_return.png" alt="Return 1" class="additional-chart donut-chart">
+                <img src="gold_final_hole_return.png" alt="Return 2" class="additional-chart donut-chart">
+                <img src="gold_final_diff_return.png" alt="Return 3" class="additional-chart donut-chart">
+            </div>
+        </div>
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        <!--/ BITCOIN DASHBOARD /-->
+        <div id="bitcoin" class="dashboard" style="display:none;">
+            <h2 class="dashboard-title">Clutch Swing Dashboard - Bitcoin</h2>
+            <div class="charts">
+                <img src="bitcoinChart1.png" alt="Bitcoin Chart 1" class="chart">
+                <img src="bitcoinChart2.png" alt="Bitcoin Chart 2" class="chart">
+            </div>
+        </div>
+
+        
+    </div>
+
+    <script>
+    //     // Function to show the selected dashboard
+    //     function showDashboard(dashboard) {
+    //         // Hide all dashboards
+    //         document.querySelectorAll('.dashboard').forEach(function(el) {
+    //             el.style.display = 'none';
+    //         });
+    //         // Show the selected dashboard
+    //         document.getElementById(dashboard).style.display = 'block';
+    //         // Refresh images to avoid cache
+    //         refreshImages(dashboard);
+    //     }
+
+        // // Function to refresh images with a cache buster query string
+        // function refreshImages(dashboard) {
+        //     const timeStamp = new Date().getTime();
+        //     if (dashboard === 'gold') {
+        //         // document.getElementById('goldChart1').src = `gold_backtest.png?${timeStamp}`; // 캐시 방지 쿼리 추가
+        //         // document.getElementById('goldChart2').src = `gold_close_vol.png?${timeStamp}`; // 캐시 방지 쿼리 추가
+        //     } else if (dashboard === 'sp500') {
+        //         document.getElementById('sp500Chart1').src = `URL_TO_SP500_CHART1?${timeStamp}`; // 캐시 방지 쿼리 추가
+        //         document.getElementById('sp500Chart2').src = `URL_TO_SP500_CHART2?${timeStamp}`; // 캐시 방지 쿼리 추가
+        //     } else if (dashboard === 'bitcoin') {
+        //         document.getElementById('bitcoinChart1').src = `URL_TO_BITCOIN_CHART1?${timeStamp}`; // 캐시 방지 쿼리 추가
+        //         document.getElementById('bitcoinChart2').src = `URL_TO_BITCOIN_CHART2?${timeStamp}`; // 캐시 방지 쿼리 추가
+        //     }
+        // }
+
+        // Initial dashboard display
+        // showDashboard('gold');
+    </script>
+
+</body>
+</html>
