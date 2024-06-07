@@ -1,25 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--/ <meta name="viewport" content="width=device-width, initial-scale=1.0">    /-->
     <!--/ TITLE /-->
     <title>Clutch Swing Dashboard</title>
-    <script>
-        function refreshOnLoad() {
-            if (!sessionStorage.getItem('refreshed')) {
-                // 세션 스토리지에 새로고침 여부 저장
-                sessionStorage.setItem('refreshed', 'true');
-                // 현재 시간의 타임스탬프를 쿼리 파라미터로 추가하여 새로고침
-                var currentUrl = window.location.href;
-                var separator = currentUrl.includes('?') ? '&' : '?';
-                var newUrl = currentUrl + separator + 'refresh=' + new Date().getTime();
-                window.location.href = newUrl;
-            }
-        }
-
-        window.onload = refreshOnLoad;
-    </script>
     <style>
         body {
             display: flex;
