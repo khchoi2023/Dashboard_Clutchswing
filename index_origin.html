@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTLXV70KH6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BTLXV70KH6');
+    </script>
+
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta charset="UTF-8">
+    <!--/ <meta name="viewport" content="width=device-width, initial-scale=1.0">    /-->
+    <!--/ TITLE /-->
+    <title>Clutch Swing Dashboard</title>
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .dashboard-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .charts {
+            display: flex;
+            justify-content: space-around;
+        }
+        .chart {
+            width: 45%;
+        }
+        .additional-charts {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .additional-chart {
+            flex: 1;
+            margin: 0 5px;
+        }
+        .donut-chart {
+            flex: 2;
+        }
+        .signal-chart {
+            flex: 9;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <!--/ GOLD DASHBOARD /-->
+        <div id="gold" class="dashboard">
+            <h2 class="dashboard-title">Clutch Swing Dashboard - Gold</h2>
+            <div class="charts">
+                <img src="gold_backtest.png" alt="Gold Chart 1" class="chart">
+                <img src="gold_close_vol.png" alt="Gold Chart 2" class="chart">
+            </div>
+            <div class="additional-charts">
+                <img src="gold_mlr_donut_annual.png" alt="Donut Chart 1" class="additional-chart donut-chart">
+                <img src="gold_mlr_donut_monthly.png" alt="Donut Chart 2" class="additional-chart donut-chart">
+                <img src="gold_mlr_donut_weekly.png" alt="Donut Chart 3" class="additional-chart donut-chart">
+                <img src="gold_latest_signal.png" alt="Signal Chart" class="additional-chart signal-chart">
+            </div>
+            <div class="additional-charts">
+                <img src="gold_mgr_donut_annual.png" alt="Donut Chart 1" class="additional-chart donut-chart">
+                <img src="gold_mgr_donut_monthly.png" alt="Donut Chart 2" class="additional-chart donut-chart">
+                <img src="gold_mgr_donut_weekly.png" alt="Donut Chart 3" class="additional-chart donut-chart">
+                <img src="gold_final_return_bar.png" alt="Signal Chart" class="additional-chart signal-chart">
+            </div>
+            <div class="additional-charts">
+                <img src="gold_final_trade_return.png" alt="Return 1" class="additional-chart donut-chart">
+                <img src="gold_final_hole_return.png" alt="Return 2" class="additional-chart donut-chart">
+                <img src="gold_final_diff_return.png" alt="Return 3" class="additional-chart donut-chart">
+            </div>
+        </div>
+</body>
+</html>
