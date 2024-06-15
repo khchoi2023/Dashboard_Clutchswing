@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) 시작 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTLXV70KH6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BTLXV70KH6');
+    </script>
+    <!-- Google tag (gtag.js) 종료 -->
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+    
+    <!--/ TITLE /-->
+    <title>Clutch Swing Dashboard</title>
+
+
+<style>
+        /* 노멀라이즈 시작 */
+        /* 모든 태그의 기본 마진과 패딩을 제거하고 리스트 스타일을 없앰 */
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        /* 링크의 색상과 텍스트 데코레이션을 상속 받도록 설정 */
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        /* 노멀라이즈 끝 */
+
+        /* 커스텀 시작 */
+        /* 2차 메뉴는 기본적으로 보이지 않도록 설정 */
+        .side-bar > ul ul {
+            display: none;
+        }
+
+        /* 스크롤 생성을 위해 body의 높이를 5000px로 설정 */
+        body {
+            /* height: 5000px; */
+            height: 1500px;                                             /* 페이지 전체 높이 설정 (스크롤 관련) */
+            /* background-color: #444; */
+            background-color: #ffff;                                  /* 메인페이지 배경 색상 설정 */
+        }
+
+        /* 사이드바의 너비와 높이를 CSS 변수로 설정 */
+        :root {
+            --side-bar-width: 270px;
+            --side-bar-height: 90vh;
+        }
+
+        /* 사이드바 스타일 설정 */
+        .side-bar {
+            position: fixed;    /* 스크롤을 따라 고정되도록 설정 */
+            background-color: black;
+            width: var(--side-bar-width);  /* 너비를 변수로 설정 */
+            min-height: var(--side-bar-height);   /* 높이를 변수로 설정 */
+            margin-top: calc((100vh - var(--side-bar-height)) / 2);  /* 상단과 하단에 균등한 마진 적용 */
+            border-radius: 20px;  /* 모서리를 둥글게 설정 */
+            transform: translate(calc(var(--side-bar-width) * -0.8), 0); /* 왼쪽으로 80% 숨김 */
+            transition: .5s;  /* 모든 변화에 0.5초의 전환 시간 적용 */
+        }
+
+        /* 아이콘 박스 설정 */
+        .side-bar__icon-box {
+            display: flex;
+            justify-content: flex-end;  /* 아이콘을 오른쪽 끝에 배치 */
+        }
+
+        /* 아이콘 스타일 설정 */
+        .side-bar__icon-1 {
+            position: relative;
+            width: 23px;
+            height: 17px;
+            margin: 15px;
+            margin-top: 20px;
+            transition: .5s;  /* 아이콘 변화에 0.5초의 전환 시간 적용 */
+        }
+
+        /* 아이콘 전환 시간을 변수로 설정 */
+        :root {
+            --side-bar__icon: .5s;
+        }
+
+        /* 아이콘 내부 막대 스타일 설정 */
+        .side-bar__icon-1 > div {
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            background-color: white;
+            transition: all var(--side-bar__icon);  /* 아이콘 변화에 변수 사용 */
+        }
+
+        /* 첫 번째 막대 스타일 설정 */
+        .side-bar__icon-1 > div:nth-of-type(1) {
+            top: 0;
+            width: auto;
+            left: 0;
+            right: 0;
+            transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), right calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), height calc(var(--side-bar__icon) / 2) 0s;
+        }
+
+        /* 두 번째 막대 스타일 설정 */
+        .side-bar__icon-1 > div:nth-of-type(2) {
+            top: 40%;
+            transform-origin: bottom left;
+        }
+
+        /* 세 번째 막대 스타일 설정 */
+        .side-bar__icon-1 > div:nth-of-type(3) {
+            top: 80%;
+            left: auto;
+            right: 0;
+            transform-origin: bottom right;
+        }
+
+        /* 사이드바에 마우스를 올리면 아이콘 이동 */
+        .side-bar:hover .side-bar__icon-1 {
+            transform: translate(-198px, 0);
+        }
+
+        /* 사이드바에 마우스를 올리면 두 번째 막대 스타일 변경 */
+        .side-bar:hover .side-bar__icon-1 > div:nth-of-type(2) {
+            transform: rotate(45deg);
+            width: 70.5%;
+            height: 25%;
+        }
+
+        /* 사이드바에 마우스를 올리면 세 번째 막대 스타일 변경 */
+        .side-bar:hover .side-bar__icon-1 > div:nth-of-type(3) {
+            top: 40%;
+            transform: rotate(-45deg);
+            width: 70.5%;
+            height: 25%;
+        }
+
+        /* 사이드바에 마우스를 올리면 첫 번째 막대 스타일 변경 */
+        .side-bar:hover .side-bar__icon-1 > div:nth-of-type(1) {
+            left: 41%;
+            right: 41%;
+            height: 100%;
+            transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) 0s, right calc(var(--side-bar__icon) / 2) 0s, height calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2);
+        }
+
+        /* 모든 메뉴의 a 태그 스타일 설정 */
+        .side-bar ul > li > a {
+            display: block;
+            color: white;
+            /* font-size: 1.4rem; */
+            font-size: 1.2rem;
+            /* font-weight: bold; */
+            padding-top: 20px;
+            /* padding-bottom: 20px; */
+            padding-bottom: 5px;
+            padding-left: 50px;
+            transition: .5s;  /* 전환 시간 설정 */
+        }
+
+        /* 리스트 항목의 position을 relative로 설정하여 자식 엘리먼트가 부모 내부에 위치하도록 함 */
+        .side-bar > ul > li {
+            position: relative;
+        }
+
+        /* 메뉴에 마우스를 올리면 배경색 변경 및 하단 테두리 추가 */
+        .side-bar ul > li:hover > a {
+            background-color: #555;
+            border-bottom: 1px solid #999;
+        }
+
+        /* 1차 메뉴에 마우스를 올리면 2차 메뉴 등장 */
+        .side-bar > ul > li:hover > ul {
+            display: block;
+            position: absolute;
+            background-color: #888;
+            top: 0;         /* 2차 메뉴의 상단을 1차 메뉴의 상단에 고정 */
+            left: 100%;     /* 2차 메뉴를 1차 메뉴의 너비만큼 이동 */
+            width: 100%;    /* 1차 메뉴의 너비를 상속 */
+        }
+
+        /* 사이드바에 마우스를 올리면 사이드바가 원래의 위치로 이동 */
+        .side-bar:hover {
+            transform: translate(-20px, 0);   /* 둥근 모서리의 너비만큼 숨겨주기 */
+        }
+        /* 커스텀 끝 */
+
+
+        .content-box {
+            /* margin-left: calc(var(--side-bar-width) - 4cm); 사이드바 너비 + 1cm */
+            margin-left: calc(var(--side-bar-width) / 4);
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #ffff;
+            border-radius: 10px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            /* width: 70%; */
+            width: 100%;
+            min-height: 70vh;
+        }
+
+        
+
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        .dashboard-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .charts {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .chart {
+            width: 45%;
+            min-width: 700px;
+        }
+        .additional-charts {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .additional-chart {
+            flex: 1;
+            margin: 0 5px;
+        }
+        .donut-chart {
+            flex: 2;
+        }
+        .signal-chart {
+            flex: 9;
+        }
+
+
+    </style>
+</head>       
+
+<body>
+    <div class="side-bar">
+        <div class="side-bar__icon-box">
+            <div class="side-bar__icon-1">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#" onclick="showContent('gold')">Gold</a></li>
+            <li><a href="#" onclick="showContent('bitcoin')">Bitcoin</a></li>
+            <li><a href="#" onclick="showContent('documents')">Documents</a></li>
+        </ul>
+    </div>
+
+
+<!--/ #################################################################################################### /-->
+    <!-- Home -->
+    <div class="content-box" id="contentBox">
+        <!-- Content will be loaded here -->
+        <!-- 첫화면은 Gold 페이지와 동일하게 -->
+        <h1>Dashboard for Gold</h1>
+        <p style="font-size: 20px;">
+        Gold is a precious metal that has been used for centuries in jewelry, currency, and as an investment.<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </p>
+        
+        <!-- <h2 class="dashboard-title">Clutch Swing Dashboard - Gold</h2>
+        <br> -->
+
+        <div class="charts">
+            <img src="gold_backtest.png" alt="Gold Chart 1" class="chart">
+            <img src="gold_close_vol.png" alt="Gold Chart 2" class="chart">
+        </div>
+        <div class="additional-charts">
+            <img src="gold_mlr_donut_annual.png" alt="Donut Chart 1" class="additional-chart donut-chart">
+            <img src="gold_mlr_donut_monthly.png" alt="Donut Chart 2" class="additional-chart donut-chart">
+            <img src="gold_mlr_donut_weekly.png" alt="Donut Chart 3" class="additional-chart donut-chart">
+            <img src="gold_latest_signal.png" alt="Signal Chart" class="additional-chart signal-chart">
+        </div>
+        <div class="additional-charts">
+            <img src="gold_mgr_donut_annual.png" alt="Donut Chart 1" class="additional-chart donut-chart">
+            <img src="gold_mgr_donut_monthly.png" alt="Donut Chart 2" class="additional-chart donut-chart">
+            <img src="gold_mgr_donut_weekly.png" alt="Donut Chart 3" class="additional-chart donut-chart">
+            <img src="gold_final_return_bar.png" alt="Signal Chart" class="additional-chart signal-chart">
+        </div>
+        <div class="additional-charts">
+            <img src="gold_final_trade_return.png" alt="Return 1" class="additional-chart donut-chart">
+            <img src="gold_final_hole_return.png" alt="Return 2" class="additional-chart donut-chart">
+            <img src="gold_final_diff_return.png" alt="Return 3" class="additional-chart donut-chart">
+        </div>
+
+        <!-- 저작권 표시 -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <p style="font-size: 15px; text-align: left;">
+        Copyright © 2024 Clutch Swing. All rights reserved.<br>
+        No part of this content may be reproduced without permission.<br>
+        </p>
+        <br>
+        <br>
+
+    </div>
+
+    </div>
+
+<!--/ #################################################################################################### /-->
+    <!--/ GOLD 페이지 /-->
+    <!-- <div class="content"> -->
+    <!-- <div id="gold" class="dashboard"> -->
+    <div id="gold" style="display: none;">
+        <!-- <h2 class="dashboard-title">Clutch Swing Dashboard - Gold</h2> -->
+        <h1>Dashboard for Gold</h1>
+        <p style="font-size: 20px;">
+        Gold is a precious metal that has been used for centuries in jewelry, currency, and as an investment.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <div class="charts">
+            <img src="gold_backtest.png" alt="Gold Chart 1" class="chart">
+            <img src="gold_close_vol.png" alt="Gold Chart 2" class="chart">
+        </div>
+        <div class="additional-charts">
+            <img src="gold_mlr_donut_annual.png" alt="Donut Chart 1" class="additional-chart donut-chart">
+            <img src="gold_mlr_donut_monthly.png" alt="Donut Chart 2" class="additional-chart donut-chart">
+            <img src="gold_mlr_donut_weekly.png" alt="Donut Chart 3" class="additional-chart donut-chart">
+            <img src="gold_latest_signal.png" alt="Signal Chart" class="additional-chart signal-chart">
+        </div>
+        <div class="additional-charts">
+            <img src="gold_mgr_donut_annual.png" alt="Donut Chart 1" class="additional-chart donut-chart">
+            <img src="gold_mgr_donut_monthly.png" alt="Donut Chart 2" class="additional-chart donut-chart">
+            <img src="gold_mgr_donut_weekly.png" alt="Donut Chart 3" class="additional-chart donut-chart">
+            <img src="gold_final_return_bar.png" alt="Signal Chart" class="additional-chart signal-chart">
+        </div>
+        <div class="additional-charts">
+            <img src="gold_final_trade_return.png" alt="Return 1" class="additional-chart donut-chart">
+            <img src="gold_final_hole_return.png" alt="Return 2" class="additional-chart donut-chart">
+            <img src="gold_final_diff_return.png" alt="Return 3" class="additional-chart donut-chart">
+        </div>
+
+        <!-- 저작권 표시 -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <p style="font-size: 15px; text-align: left;">
+        Copyright © 2024 Clutch Swing. All rights reserved.<br>
+        No part of this content may be reproduced without permission.<br>
+        </p>
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+    <!--/ #################################################################################################### /-->
+    <!-- Bitcoin 페이지 -->
+    <div id="bitcoin" style="display: none;">
+        <h1>Dashboard for Bitcoin</h1>
+        <p style="font-size: 20px;">
+            Bitcoin is a decentralized digital currency that can be transferred on the peer-to-peer bitcoin network.<br>
+        <br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <h1>Coming Soon!</h1>
+
+
+
+
+    </div>
+
+
+    <!--/ #################################################################################################### /-->
+    <!-- Documents 페이지 -->
+    <div id="documents" style="display: none;">
+        <h1>Documents</h1>
+        <p style="font-size: 20px;">
+        This section contains various important documents and files.
+        </p>
+
+        <br><br><br>
+
+        <h3>NOTICE</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+        • This dashboard is NOT real-time.<br>
+        • We do not take responsibility for any losses incurred.<br>
+        • Investment decisions rest solely with the user.<br>
+        • The 'Buy' and 'Sell' Signals provided by this dashboard are for reference only, and the responsibility<br>
+        • Always check the date of the latest data.<br>
+        </p>
+        <br>
+
+        <h3>Clutch Swing Trading Strategy</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+        The Clutch Swing trading strategy leverages the cyclical or patterned movements of asset prices to capture optimal buy and sell points. The goal is to maximize profits and minimize losses by exploiting these price fluctuations.
+        </p>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+        <strong>Buy Signal : </strong>
+        A buy signal occurs when the asset's price drops below the Clutch Line. This indicates that the asset is in an oversold state, suggesting a high probability of price increase, prompting a buy action.
+        </p>
+        
+        <p style="font-size: 20px; font-weight: lighter;">
+        <strong>Sell Signal : </strong>
+        A sell signal occurs when the asset's price rises above the Clutch Line. This indicates that the asset is in an overbought state, suggesting a high probability of price decrease, prompting a sell action.
+        </p>
+        <br>
+
+        <h3>MLR (Maximum Loss Return)</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+        MLR represents the maximum loss rate over a given period. It calculates the percentage decline in asset price from the beginning to the end of a specific period, indicating the largest drop. This dashboard compares the MLR when holding assets continuously versus using the Clutch Swing investment strategy. MLR is crucial for risk management and formulating loss prevention strategies.
+        </p>
+        <br>
+
+        <h3>MGR (Maximum Gain Return)</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+        MGR represents the maximum gain rate over a given period. It calculates the percentage increase in asset price from the beginning to the end of a specific period, indicating the largest rise. This dashboard compares the MGR when holding assets continuously versus using the Clutch Swing investment strategy. MGR is useful for evaluating investment performance and analyzing potential profitability.
+        </p>
+        <br>
+
+        <h3>Final Return</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+        The Final Return represents the return rate over the entire period. 'Final Hold Return' indicates the return rate if the assets were held continuously, while 'Final Trade Return' represents the return rate using the Clutch Swing investment strategy. Both are expressed as percentages. Additionally, the Differential Return shows the difference between these two return rates.
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
+        <!-- 저작권 표시 -->
+        <p style="font-size: 15px; text-align: left;">
+        Copyright © 2024 Clutch Swing. All rights reserved.<br>
+        No part of this content may be reproduced without permission.<br>
+        </p>
+        <br>
+        <br>
+
+    <!--/ #################################################################################################### /-->
+    <script>
+        function showContent(contentId) {
+            const contentBox = document.getElementById('contentBox');
+            const content = document.getElementById(contentId).innerHTML;
+            contentBox.innerHTML = content;
+        }
+    </script>
+
+</body>
+</html>
