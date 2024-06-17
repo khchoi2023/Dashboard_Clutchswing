@@ -42,9 +42,7 @@
         }
 
         body {
-            /* height: 5000px; */
             height: 1500px;
-            /* background-color: #444; */
             background-color: #ffff;
         }
 
@@ -137,11 +135,8 @@
         .side-bar ul > li > a {
             display: block;
             color: white;
-            /* font-size: 1.4rem; */
             font-size: 1.2rem;
-            /* font-weight: bold; */
             padding-top: 20px;
-            /* padding-bottom: 20px; */
             padding-bottom: 5px;
             padding-left: 50px;
             transition: .5s;
@@ -165,6 +160,7 @@
             width: 100%;
         }
 
+
         .side-bar:hover {
             transform: translate(-20px, 0);
         }
@@ -172,6 +168,15 @@
 
 
         .content-box {
+            /* margin-left: calc(var(--side-bar-width) - 4cm); 사이드바 너비 + 1cm */
+            margin-left: calc(var(--side-bar-width) / 4);                                   /* 왼쪽 사이드바 자리 확보*/ 
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #ffff;
+            border-radius: 10px;
+            /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+            /* width: 70%; */
             width: 100%;
             min-height: 70vh;
         }
@@ -240,7 +245,7 @@
 <!--/ #################################################################################################### /-->
     <!-- Home -->
     <div class="content-box" id="contentBox">
-        <!-- Home -->
+        <!-- Content will be loaded here -->
         <h1>Dashboard for Gold</h1>
         <p style="font-size: 20px;">
         Gold is a precious metal that has been used for centuries in jewelry, currency, and as an investment.<br>
@@ -271,7 +276,7 @@
             <img src="gold_final_diff_return.png" alt="Return 3" class="additional-chart donut-chart">
         </div>
 
-        <!-- copyright -->
+        <!-- Copyright -->
         <br>
         <br>
         <br>
@@ -323,7 +328,7 @@
             <img src="gold_final_diff_return.png" alt="Return 3" class="additional-chart donut-chart">
         </div>
 
-        <!-- copyright -->
+        <!-- Copyright -->
         <br>
         <br>
         <br>
@@ -374,7 +379,7 @@
             <img src="btc_final_diff_return.png" alt="Return 3" class="additional-chart donut-chart">
         </div>
 
-        <!-- copyright -->
+        <!-- Copyright -->
         <br>
         <br>
         <br>
@@ -450,7 +455,7 @@
         <br>
         <br>
         
-        <!-- 저작권 표시 -->
+        <!-- Copyright -->
         <p style="font-size: 15px; text-align: left;">
         Copyright © 2024 Clutch Swing. All rights reserved.<br>
         Reproduction without permission is prohibited.<br>
