@@ -6,11 +6,11 @@ from datetime import datetime
 
 
 
-# Git 사용자 설정 (한 번만 설정)
+# Git 사용자 설정
 subprocess.run(['git', 'config', '--global', 'user.email', '[you@example.com]'])
 subprocess.run(['git', 'config', '--global', 'user.name', '[Your Name]'])
 
-# GitHub 저장소 클론 (이미 클론된 경우 생략 가능)
+# GitHub 저장소 클론
 repository_url = 'https://[Personal Access Token]@github.com/[Your Name]/[RepositoryName].git'
 repository_dir = 'C:/abcd/abcd'
 
