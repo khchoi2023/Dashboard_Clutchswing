@@ -66,6 +66,8 @@ def upload_to_github():
 
 
 
+run()                                                                                       # 코드 실행시, 1회 실행
+
 while True:
     now = datetime.now()
     
