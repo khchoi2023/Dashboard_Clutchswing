@@ -20,9 +20,12 @@ if not os.path.exists(repository_dir):
 
 
 def run():
-    subprocess.run(['python', 'clutchswing_gold.py'])
-    subprocess.run(['python', 'clutchswing_btc.py'])
-    subprocess.run(['python', 'clutchswing_eth.py'])
+    # subprocess.run(['python', 'clutchswing_gold.py'])
+    # subprocess.run(['python', 'clutchswing_btc.py'])
+    # subprocess.run(['python', 'clutchswing_eth.py'])
+    subprocess.run(['python', 'C:/abcd/clutchswing_gold.py'])
+    subprocess.run(['python', 'C:/abcd/clutchswing_btc.py'])
+    subprocess.run(['python', 'C:/abcd/clutchswing_eth.py'])
     upload_to_github()
 
 
@@ -67,6 +70,9 @@ def upload_to_github():
 
 
 run()                                                                                       # 코드 실행시, 1회 실행
+print()
+print("최초 실행 완료")
+print("대기중")
 
 while True:
     now = datetime.now()
@@ -78,6 +84,7 @@ while True:
         execution_time = end_time - start_time                                              # 실행 시간 계산
         print()
         print(f"코드 실행 시간: {execution_time} 초")
+        print("1차 실행 완료")
         print()
 
         time.sleep(120)                                                                      # 2분간 대기
@@ -88,11 +95,13 @@ while True:
         execution_time = end_time - start_time                                              # 실행 시간 계산
         print()
         print(f"코드 실행 시간: {execution_time} 초")
+        print("2차 실행 완료")
         print()
 
+        print("대기중")
         time.sleep(23.8 * 60 * 60)                                                          # 23시 48분간 대기
 
     else:
-        time.sleep(2)                                                                       # 23시 30분간 대기 이후 부터는 2초 간격으로 체크
+        time.sleep(2)                                                                       # 23시 48분간 대기 이후 부터는 2초 간격으로 체크
 
 
