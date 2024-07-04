@@ -12,7 +12,13 @@ subprocess.run(['git', 'config', '--global', 'user.name', '[Your Name]'])
 
 # GitHub 저장소 클론
 repository_url = 'https://[Personal Access Token]@github.com/[Your Name]/[RepositoryName].git'
-repository_dir = 'C:/abcd/efgh'     # 'GitHub 저장소 클론' 외부 다른 폴더에서 이미지 파일 생성한 뒤 커밋해야함
+repository_dir = 'C:/abcd/efgh'
+    # 'GitHub 저장소 클론' 외부 다른 폴더에서 이미지 파일 생성한 뒤 커밋 해야함
+    # C:/abcd/efgh - GitHub 저장소 클론인 폴더
+    # C:/abcd/img - 생성된 이미지 저장 폴더
+    # C:/abcd/img에서 C:/abcd/efgh/img로 커밋
+
+
 
 if not os.path.exists(repository_dir):
     subprocess.run(['git', 'clone', repository_url, repository_dir])
@@ -31,7 +37,7 @@ def run():
 
 
 def upload_to_github():
-    img_base_dir = 'C:/abcd/img'
+    img_base_dir = 'C:/abcd/img'                                            # C:/abcd/img - 생성된 이미지 저장 폴더
     sub_dirs = ['gold', 'btc', 'eth']
 
     os.chdir(repository_dir)
@@ -40,8 +46,8 @@ def upload_to_github():
     subprocess.run(['git', 'pull', 'origin', 'main'])
 
     for sub_dir in sub_dirs:
-        src_dir = os.path.join(img_base_dir, sub_dir)
-        dest_dir = os.path.join(repository_dir, 'img', sub_dir)
+        src_dir = os.path.join(img_base_dir, sub_dir)                       # C:/abcd/img - 생성된 이미지 저장 폴더 및 서브 폴더 ['gold', 'btc', 'eth']
+        dest_dir = os.path.join(repository_dir, 'img', sub_dir)             # C:/abcd/efgh - GitHub 저장소 클론인 폴더
 
         if os.path.exists(src_dir):
             if not os.path.exists(dest_dir):
@@ -87,7 +93,7 @@ while True:
         print("1차 실행 완료")
         print()
 
-        time.sleep(120)                                                                      # 2분간 대기
+        time.sleep(120)                                                                     # 2분간 대기
 
         start_time = time.time()                                                            # 시작 시간 기록
         run()                                                                               # 2차 실행 (약 45초 소요)
