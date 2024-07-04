@@ -12,7 +12,7 @@ subprocess.run(['git', 'config', '--global', 'user.name', '[Your Name]'])
 
 # GitHub 저장소 클론
 repository_url = 'https://[Personal Access Token]@github.com/[Your Name]/[RepositoryName].git'
-repository_dir = 'C:/abcd/abcd'
+repository_dir = 'C:/abcd/efgh'     # 'GitHub 저장소 클론' 외부 다른 폴더에서 이미지 파일 생성한 뒤 커밋해야함
 
 if not os.path.exists(repository_dir):
     subprocess.run(['git', 'clone', repository_url, repository_dir])
@@ -31,7 +31,7 @@ def run():
 
 
 def upload_to_github():
-    img_base_dir = 'C:/abcd/abcd'
+    img_base_dir = 'C:/abcd/img'
     sub_dirs = ['gold', 'btc', 'eth']
 
     os.chdir(repository_dir)
