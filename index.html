@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) start -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTLXV70KH6"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-BTLXV70KH6');
+    </script>
+    <!-- Google tag (gtag.js) end -->
+
+
+    <!-- Google AdSense -->
+    <meta name="google-adsense-account" content="ca-pub-9298526248649500">
+
+    <!-- Google AdSense Automatic Ads-->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9298526248649500" crossorigin="anonymous"></script>
+
+
+
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--/ TITLE /-->
+    <title>Clutch Swing</title>
+
+    <!--/ Page Description /-->
+    <meta name="description" content="Clutch Swing strategy uses price cycles to identify optimal buy and sell points.">
+    
+    <!--/ Open Graph /-->
+    <meta property="og:type" content="website"> 
+    <meta property="og:title" content="Clutch Swing">
+    <meta property="og:description" content="Clutch Swing strategy uses price cycles to identify optimal buy and sell points.">
+    <meta property="og:image" content="https://clutchswing.com/logo.png">
+    <meta property="og:url" content="https://clutchswing.com">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Clutch Swing">
+    <meta name="twitter:description" content="Clutch Swing strategy uses price cycles to identify optimal buy and sell points.">
+    <meta name="twitter:image" content="https://clutchswing.com/logo.png">
+    <meta name="twitter:domain" content="clutchswing.com">
+
+
+
+<style>
+        body, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .side-bar > ul ul {
+            display: none;
+        }
+
+        body {
+            height: 1500px;
+            background-color: #ffff;
+        }
+
+        :root {
+            --side-bar-width: 270px;
+            --side-bar-height: 90vh;
+        }
+
+        .side-bar {
+            position: fixed;
+            background-color: black;
+            width: var(--side-bar-width);
+            min-height: var(--side-bar-height);
+            margin-top: calc((100vh - var(--side-bar-height)) / 2);
+            border-radius: 20px;
+            transform: translate(calc(var(--side-bar-width) * -0.8), 0);
+            transition: .5s;
+        }
+
+        .side-bar__icon-box {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .side-bar__icon-1 {
+            position: relative;
+            width: 23px;
+            height: 17px;
+            margin: 15px;
+            margin-top: 20px;
+            transition: .5s;
+        }
+
+        :root {
+            --side-bar__icon: .5s;
+        }
+
+        .side-bar__icon-1 > div {
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            background-color: white;
+            transition: all var(--side-bar__icon);
+        }
+
+        .side-bar__icon-1 > div:nth-of-type(1) {
+            top: 0;
+            width: auto;
+            left: 0;
+            right: 0;
+            transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), right calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), height calc(var(--side-bar__icon) / 2) 0s;
+        }
+
+        .side-bar__icon-1 > div:nth-of-type(2) {
+            top: 40%;
+            transform-origin: bottom left;
+        }
+
+        .side-bar__icon-1 > div:nth-of-type(3) {
+            top: 80%;
+            left: auto;
+            right: 0;
+            transform-origin: bottom right;
+        }
+
+        .side-bar:hover .side-bar__icon-1 {
+            transform: translate(-198px, 0);
+        }
+
+        .side-bar:hover .side-bar__icon-1 > div:nth-of-type(2) {
+            transform: rotate(45deg);
+            width: 70.5%;
+            height: 25%;
+        }
+
+        .side-bar:hover .side-bar__icon-1 > div:nth-of-type(3) {
+            top: 40%;
+            transform: rotate(-45deg);
+            width: 70.5%;
+            height: 25%;
+        }
+
+        .side-bar:hover .side-bar__icon-1 > div:nth-of-type(1) {
+            left: 41%;
+            right: 41%;
+            height: 100%;
+            transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) 0s, right calc(var(--side-bar__icon) / 2) 0s, height calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2);
+        }
+
+        .side-bar ul > li > a {
+            display: block;
+            color: white;
+            font-size: 1.2rem;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            padding-left: 50px;
+            transition: .5s;
+        }
+
+        .side-bar > ul > li {
+            position: relative;
+        }
+
+        .side-bar ul > li:hover > a {
+            background-color: #555;
+            border-bottom: 1px solid #999;
+        }
+
+        .side-bar > ul > li:hover > ul {
+            display: block;
+            position: absolute;
+            background-color: #888;
+            top: 0;
+            left: 100%;
+            width: 100%;
+        }
+
+        .side-bar:hover {
+            transform: translate(-20px, 0);
+        }
+
+        .content-box {
+            margin-left: calc(var(--side-bar-width) / 4);
+            padding: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-color: #ffff;
+            border-radius: 10px;
+            width: 100%;
+            min-height: 70vh;
+        }
+    </style>
+</head>       
+
+<body>
+    <div class="side-bar">
+        <div class="side-bar__icon-box">
+            <div class="side-bar__icon-1">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <ul>
+            <li><a href="#" onclick="showContent('apple')">APPLE</a></li>
+            <li><a href="#" onclick="showContent('nvidia')">NVIDIA</a></li>
+            <li><a href="#" onclick="showContent('gold')">Gold</a></li>
+            <li><a href="#" onclick="showContent('bitcoin')">Bitcoin</a></li>
+            <li><a href="#" onclick="showContent('ethereum')">Ethereum</a></li>
+            <li><a href="#" onclick="showContent('ethereum_classic')">Ethereum Classic</a></li>
+            <li><a href="#" onclick="showContent('ripple')">Ripple</a></li>
+            <li><a href="#" onclick="showContent('dogecoin')">Dogecoin</a></li>
+            <li><a href="#" onclick="showContent('documents')">Documents</a></li>
+            <li><a href="#" onclick="showContent('contact')">Contact</a></li>
+        </ul>
+
+        <br>
+        
+        <!--/ Google Ads (in-article) /-->
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9298526248649500"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block; text-align:center;"
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-9298526248649500"
+            data-ad-slot="3586155700"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        
+    </div>
+
+    <!-- Home -->
+    <div class="content-box" id="contentBox" style="width: 1600px; clear: both;">
+        <!-- Content will be loaded here -->
+        <h1>Clutch Swing Dashboard</h1>
+        <p style="font-size: 20px;">
+            Clutch Swing is an investment strategy that minimizes losses by disengaging<br>
+            from the volatility of the investment target when returns start to decline.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <!--/ Google Ads (in-article) /-->
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9298526248649500"
+            crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+            style="display:block; text-align:center;"
+            data-ad-layout="in-article"
+            data-ad-format="fluid"
+            data-ad-client="ca-pub-9298526248649500"
+            data-ad-slot="3586155700"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <br>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            1) Select the investment asset from the left menu<br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            2) Check the investment returns of the Clutch Swing strategy in the backtest chart.<br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            3) Check the Clutch Swing strategy's insights under 'Latest Signal' and 'Latest Signal Date'.<br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            4) For explanations of each chart, refer to the Documents menu.<br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            5) The Clutch Swing strategy is based on daily charts, so the update duration is once every 24 hours.<br><br>
+        </p>
+
+        <br>
+        <br>
+        <br>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <!--/ APPLE /-->
+    <div id="apple" style="display: none; width: 1600px; clear: both;">
+        <h1>Dashboard for APPLE</h1>
+        <p style="font-size: 20px;">
+            Apple designs high-performance electronics and software, leading the market with products like the iPhone, iPad, Mac, and Apple Watch.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <div style="height: 450px; width: 1600px; clear: both;">
+            <img style="width: 800px; float:left;" src="img/aapl/aapl_backtest.png" alt="APPLE Backtest Chart">
+            <img style="width: 800px; float:left;" src="img/aapl/aapl_close_vol.png" alt="APPLE Price and Volume Chart">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/aapl/aapl_mlr_donut_annual.png" alt="APPLE Annual MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/aapl/aapl_mlr_donut_monthly.png" alt="APPLE Monthly MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/aapl/aapl_mlr_donut_weekly.png" alt="APPLE Weekly MLR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/aapl/aapl_latest_signal.png" alt="APPLE Clutch Swing Signal">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/aapl/aapl_mgr_donut_annual.png" alt="APPLE Annual MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/aapl/aapl_mgr_donut_monthly.png" alt="APPLE Monthly MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/aapl/aapl_mgr_donut_weekly.png" alt="APPLE Weekly MGR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/aapl/aapl_final_return_bar.png" alt="APPLE Final Return Bar Chart">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <img style="width: 500px; float:left;" src="img/aapl/aapl_final_trade_return.png" alt="APPLE Final Trade Return">
+            <img style="width: 500px; float:left;" src="img/aapl/aapl_final_hole_return.png" alt="APPLE Final Hold Return">
+            <img style="width: 500px; float:left;" src="img/aapl/aapl_final_diff_return.png" alt="APPLE Final Differential Return">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br><br>
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_1y.png" alt="APPLE Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_3y.png" alt="APPLE Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_5y.png" alt="APPLE Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_7y.png" alt="APPLE Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_9y.png" alt="APPLE Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_log_1y.png" alt="APPLE Log Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_log_3y.png" alt="APPLE Log Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_log_5y.png" alt="APPLE Log Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_log_7y.png" alt="APPLE Log Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/aapl/aapl_backtest_log_9y.png" alt="APPLE Log Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <!--/ NVIDIA /-->
+    <div id="nvidia" style="display: none; width: 1600px; clear: both;">
+        <h1>Dashboard for NVIDIA</h1>
+        <p style="font-size: 20px;">
+            NVIDIA designs and manufactures high-performance GPUs for gaming, AI, data centers, and more.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <div style="height: 450px; width: 1600px; clear: both;">
+            <img style="width: 800px; float:left;" src="img/nvda/nvda_backtest.png" alt="NVIDIA Backtest Chart">
+            <img style="width: 800px; float:left;" src="img/nvda/nvda_close_vol.png" alt="NVIDIA Price and Volume Chart">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/nvda/nvda_mlr_donut_annual.png" alt="NVIDIA Annual MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/nvda/nvda_mlr_donut_monthly.png" alt="NVIDIA Monthly MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/nvda/nvda_mlr_donut_weekly.png" alt="NVIDIA Weekly MLR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/nvda/nvda_latest_signal.png" alt="NVIDIA Clutch Swing Signal">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/nvda/nvda_mgr_donut_annual.png" alt="NVIDIA Annual MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/nvda/nvda_mgr_donut_monthly.png" alt="NVIDIA Monthly MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/nvda/nvda_mgr_donut_weekly.png" alt="NVIDIA Weekly MGR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/nvda/nvda_final_return_bar.png" alt="NVIDIA Final Return Bar Chart">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <img style="width: 500px; float:left;" src="img/nvda/nvda_final_trade_return.png" alt="NVIDIA Final Trade Return">
+            <img style="width: 500px; float:left;" src="img/nvda/nvda_final_hole_return.png" alt="NVIDIA Final Hold Return">
+            <img style="width: 500px; float:left;" src="img/nvda/nvda_final_diff_return.png" alt="NVIDIA Final Differential Return">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br><br>
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_1y.png" alt="NVIDIA Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_3y.png" alt="NVIDIA Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_5y.png" alt="NVIDIA Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_7y.png" alt="NVIDIA Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_9y.png" alt="NVIDIA Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_log_1y.png" alt="NVIDIA Log Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_log_3y.png" alt="NVIDIA Log Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_log_5y.png" alt="NVIDIA Log Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_log_7y.png" alt="NVIDIA Log Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/nvda/nvda_backtest_log_9y.png" alt="NVIDIA Log Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <!--/ GOLD /-->
+    <div id="gold" style="display: none; width: 1600px; clear: both;">
+        <h1>Dashboard for Gold</h1>
+        <p style="font-size: 20px;">
+            Gold is a precious metal that has been used for centuries in jewelry, currency, and as an investment.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <div style="height: 450px; width: 1600px; clear: both;">
+            <img style="width: 800px; float:left;" src="img/gold/gold_backtest.png" alt="GOLD Backtest Chart">
+            <img style="width: 800px; float:left;" src="img/gold/gold_close_vol.png" alt="GOLD Price and Volume Chart">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/gold/gold_mlr_donut_annual.png" alt="GOLD Annual MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/gold/gold_mlr_donut_monthly.png" alt="GOLD Monthly MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/gold/gold_mlr_donut_weekly.png" alt="GOLD Weekly MLR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/gold/gold_latest_signal.png" alt="GOLD Clutch Swing Signal">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/gold/gold_mgr_donut_annual.png" alt="GOLD Annual MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/gold/gold_mgr_donut_monthly.png" alt="GOLD Monthly MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/gold/gold_mgr_donut_weekly.png" alt="GOLD Weekly MGR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/gold/gold_final_return_bar.png" alt="GOLD Final Return Bar Chart">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <img style="width: 500px; float:left;" src="img/gold/gold_final_trade_return.png" alt="GOLD Final Trade Return">
+            <img style="width: 500px; float:left;" src="img/gold/gold_final_hole_return.png" alt="GOLD Final Hold Return">
+            <img style="width: 500px; float:left;" src="img/gold/gold_final_diff_return.png" alt="GOLD Final Differential Return">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br><br>
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_1y.png" alt="GOLD Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_3y.png" alt="GOLD Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_5y.png" alt="GOLD Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_7y.png" alt="GOLD Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_9y.png" alt="GOLD Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_log_1y.png" alt="GOLD Log Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_log_3y.png" alt="GOLD Log Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_log_5y.png" alt="GOLD Log Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_log_7y.png" alt="GOLD Log Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/gold/gold_backtest_log_9y.png" alt="GOLD Log Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <!-- Bitcoin -->
+    <div id="bitcoin" style="display: none; width: 1600px; clear: both;">
+        <h1>Dashboard for Bitcoin</h1>
+        <p style="font-size: 20px;">
+            Bitcoin is a decentralized digital currency that can be transferred on the peer-to-peer bitcoin network.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <div style="height: 450px; width: 1600px; clear: both;">
+            <img style="width: 800px; float:left;" src="img/btc/btc_backtest.png" alt="BTC Backtest Chart">
+            <img style="width: 800px; float:left;" src="img/btc/btc_close_vol.png" alt="BTC Price and Volume Chart">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/btc/btc_mlr_donut_annual.png" alt="BTC Annual MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/btc/btc_mlr_donut_monthly.png" alt="BTC Monthly MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/btc/btc_mlr_donut_weekly.png" alt="BTC Weekly MLR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/btc/btc_latest_signal.png" alt="BTC Clutch Swing Signal">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/btc/btc_mgr_donut_annual.png" alt="BTC Annual MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/btc/btc_mgr_donut_monthly.png" alt="BTC Monthly MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/btc/btc_mgr_donut_weekly.png" alt="BTC Weekly MGR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/btc/btc_final_return_bar.png" alt="BTC Final Return Bar Chart">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <img style="width: 500px; float:left;" src="img/btc/btc_final_trade_return.png" alt="BTC Final Trade Return">
+            <img style="width: 500px; float:left;" src="img/btc/btc_final_hole_return.png" alt="BTC Final Hold Return">
+            <img style="width: 500px; float:left;" src="img/btc/btc_final_diff_return.png" alt="BTC Final Differential Return">
+        </div>
+
+        <br><br>
+
+        <div style="width: 1600px; clear: both;">
+            <br><br>
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_1y.png" alt="BTC Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_3y.png" alt="BTC Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_5y.png" alt="BTC Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_7y.png" alt="BTC Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_9y.png" alt="BTC Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_log_1y.png" alt="BTC Log Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_log_3y.png" alt="BTC Log Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_log_5y.png" alt="BTC Log Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_log_7y.png" alt="BTC Log Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/btc/btc_backtest_log_9y.png" alt="BTC Log Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <!-- Ethereum -->
+    <div id="ethereum" style="display: none; width: 1600px; clear: both;">
+        <h1>Dashboard for Ethereum</h1>
+        <p style="font-size: 20px;">
+            Ethereum is a decentralized blockchain platform for building and deploying smart contracts and decentralized applications.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <div style="height: 450px; width: 1600px; clear: both;">
+            <img style="width: 800px; float:left;" src="img/eth/eth_backtest.png" alt="ETH Backtest Chart">
+            <img style="width: 800px; float:left;" src="img/eth/eth_close_vol.png" alt="ETH Price and Volume Chart">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/eth/eth_mlr_donut_annual.png" alt="ETH Annual MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/eth/eth_mlr_donut_monthly.png" alt="ETH Monthly MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/eth/eth_mlr_donut_weekly.png" alt="ETH Weekly MLR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/eth/eth_latest_signal.png" alt="ETH Clutch Swing Signal">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/eth/eth_mgr_donut_annual.png" alt="ETH Annual MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/eth/eth_mgr_donut_monthly.png" alt="ETH Monthly MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/eth/eth_mgr_donut_weekly.png" alt="ETH Weekly MGR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/eth/eth_final_return_bar.png" alt="ETH Final Return Bar Chart">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <img style="width: 500px; float:left;" src="img/eth/eth_final_trade_return.png" alt="ETH Final Trade Return">
+            <img style="width: 500px; float:left;" src="img/eth/eth_final_hole_return.png" alt="ETH Final Hold Return">
+            <img style="width: 500px; float:left;" src="img/eth/eth_final_diff_return.png" alt="ETH Final Differential Return">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br><br>
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_1y.png" alt="ETH Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_3y.png" alt="ETH Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_5y.png" alt="ETH Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_7y.png" alt="ETH Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_9y.png" alt="ETH Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_log_1y.png" alt="ETH Log Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_log_3y.png" alt="ETH Log Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_log_5y.png" alt="ETH Log Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_log_7y.png" alt="ETH Log Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/eth/eth_backtest_log_9y.png" alt="ETH Log Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <!-- Ethereum Classic-->
+    <div id="ethereum_classic" style="display: none; width: 1600px; clear: both;">
+        <h1>Dashboard for Ethereum Classic</h1>
+        <p style="font-size: 20px;">
+            Ethereum Classic is a decentralized blockchain for building smart contracts and dApps, created from a 2016 Ethereum fork.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <div style="height: 450px; width: 1600px; clear: both;">
+            <img style="width: 800px; float:left;" src="img/etc/etc_backtest.png" alt="ETC Backtest Chart">
+            <img style="width: 800px; float:left;" src="img/etc/etc_close_vol.png" alt="ETC Price and Volume Chart">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/etc/etc_mlr_donut_annual.png" alt="ETC Annual MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/etc/etc_mlr_donut_monthly.png" alt="ETC Monthly MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/etc/etc_mlr_donut_weekly.png" alt="ETC Weekly MLR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/etc/etc_latest_signal.png" alt="ETC Clutch Swing Signal">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/etc/etc_mgr_donut_annual.png" alt="ETC Annual MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/etc/etc_mgr_donut_monthly.png" alt="ETC Monthly MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/etc/etc_mgr_donut_weekly.png" alt="ETC Weekly MGR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/etc/etc_final_return_bar.png" alt="ETC Final Return Bar Chart">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <img style="width: 500px; float:left;" src="img/etc/etc_final_trade_return.png" alt="ETC Final Trade Return">
+            <img style="width: 500px; float:left;" src="img/etc/etc_final_hole_return.png" alt="ETC Final Hold Return">
+            <img style="width: 500px; float:left;" src="img/etc/etc_final_diff_return.png" alt="ETC Final Differential Return">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br><br>
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_1y.png" alt="ETC Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_3y.png" alt="ETC Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_5y.png" alt="ETC Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_7y.png" alt="ETC Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_9y.png" alt="ETC Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_log_1y.png" alt="ETC Log Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_log_3y.png" alt="ETC Log Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_log_5y.png" alt="ETC Log Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_log_7y.png" alt="ETC Log Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/etc/etc_backtest_log_9y.png" alt="ETC Log Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <!-- Ripple-->
+    <div id="ripple" style="display: none; width: 1600px; clear: both;">
+        <h1>Dashboard for Ripple</h1>
+        <p style="font-size: 20px;">
+            Ripple is a payment protocol and company enabling fast, low-cost international transfers for financial institutions using the XRP cryptocurrency.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <div style="height: 450px; width: 1600px; clear: both;">
+            <img style="width: 800px; float:left;" src="img/xrp/xrp_backtest.png" alt="XRP Backtest Chart">
+            <img style="width: 800px; float:left;" src="img/xrp/xrp_close_vol.png" alt="XRP Price and Volume Chart">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/xrp/xrp_mlr_donut_annual.png" alt="XRP Annual MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/xrp/xrp_mlr_donut_monthly.png" alt="XRP Monthly MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/xrp/xrp_mlr_donut_weekly.png" alt="XRP Weekly MLR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/xrp/xrp_latest_signal.png" alt="XRP Clutch Swing Signal">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/xrp/xrp_mgr_donut_annual.png" alt="XRP Annual MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/xrp/xrp_mgr_donut_monthly.png" alt="XRP Monthly MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/xrp/xrp_mgr_donut_weekly.png" alt="XRP Weekly MGR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/xrp/xrp_final_return_bar.png" alt="XRP Final Return Bar Chart">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <img style="width: 500px; float:left;" src="img/xrp/xrp_final_trade_return.png" alt="XRP Final Trade Return">
+            <img style="width: 500px; float:left;" src="img/xrp/xrp_final_hole_return.png" alt="XRP Final Hold Return">
+            <img style="width: 500px; float:left;" src="img/xrp/xrp_final_diff_return.png" alt="XRP Final Differential Return">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br><br>
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_1y.png" alt="XRP Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_3y.png" alt="XRP Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_5y.png" alt="XRP Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_7y.png" alt="XRP Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_9y.png" alt="XRP Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_log_1y.png" alt="XRP Log Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_log_3y.png" alt="XRP Log Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_log_5y.png" alt="XRP Log Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_log_7y.png" alt="XRP Log Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/xrp/xrp_backtest_log_9y.png" alt="XRP Log Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <!-- Dogecoin -->
+    <div id="dogecoin" style="display: none; width: 1600px; clear: both;">
+        <h1>Dashboard for Dogecoin</h1>
+        <p style="font-size: 20px;">
+            Dogecoin is a decentralized cryptocurrency originally created as a joke, known for its friendly and approachable Shiba Inu mascot.<br>
+        <br>
+        <br>
+        <br>
+        </p>
+
+        <div style="height: 450px; width: 1600px; clear: both;">
+            <img style="width: 800px; float:left;" src="img/doge/doge_backtest.png" alt="DOGE Backtest Chart">
+            <img style="width: 800px; float:left;" src="img/doge/doge_close_vol.png" alt="DOGE Price and Volume Chart">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/doge/doge_mlr_donut_annual.png" alt="DOGE Annual MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/doge/doge_mlr_donut_monthly.png" alt="DOGE Monthly MLR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/doge/doge_mlr_donut_weekly.png" alt="DOGE Weekly MLR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/doge/doge_latest_signal.png" alt="DOGE Clutch Swing Signal">
+        </div>
+
+        <div style="height: 300px; width: 1600px; clear: both;">
+            <img style="width: 200px; float:left;" src="img/doge/doge_mgr_donut_annual.png" alt="DOGE Annual MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/doge/doge_mgr_donut_monthly.png" alt="DOGE Monthly MGR Donut Chart">
+            <img style="width: 200px; float:left;" src="img/doge/doge_mgr_donut_weekly.png" alt="DOGE Weekly MGR Donut Chart">
+            <img style="width: 1000px; float:left;" src="img/doge/doge_final_return_bar.png" alt="DOGE Final Return Bar Chart">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <img style="width: 500px; float:left;" src="img/doge/doge_final_trade_return.png" alt="DOGE Final Trade Return">
+            <img style="width: 500px; float:left;" src="img/doge/doge_final_hole_return.png" alt="DOGE Final Hold Return">
+            <img style="width: 500px; float:left;" src="img/doge/doge_final_diff_return.png" alt="DOGE Final Differential Return">
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br><br>
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_1y.png" alt="DOGE Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_3y.png" alt="DOGE Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_5y.png" alt="DOGE Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_7y.png" alt="DOGE Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_9y.png" alt="DOGE Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_log_1y.png" alt="DOGE Log Backtest Last 1 Year(s)">
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_log_3y.png" alt="DOGE Log Backtest Last 3 Year(s)">
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_log_5y.png" alt="DOGE Log Backtest Last 5 Year(s)">
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_log_7y.png" alt="DOGE Log Backtest Last 7 Year(s)">
+            <img style="width: 300px; float:left;" src="img/doge/doge_backtest_log_9y.png" alt="DOGE Log Backtest Last 9 Year(s)">
+            <br>
+        </div>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <!-- Documents -->
+    <div id="documents" style="display: none; width: 1600px; clear: both;">
+        <h1>Documents</h1>
+        <p style="font-size: 20px;">
+            This section contains various important documents and files.
+        </p>
+
+        <br><br><br>
+
+        <h3>NOTICE</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+            • This dashboard is NOT real-time.<br>
+            • Update Duration : Once Every 24 Hours.<br>
+            • We do not take responsibility for any losses incurred.<br>
+            • Investment decisions rest solely with the user.<br>
+            • The 'Buy' and 'Sell' Signals provided by this dashboard are for reference only, and the responsibility<br>
+            • Always check the date of the latest data.<br>
+        </p>
+        <br>
+
+        <h3>Clutch Swing Trading Strategy</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+            The Clutch Swing trading strategy leverages the cyclical or patterned movements of asset prices to capture optimal buy and sell points. The goal is to maximize profits and minimize losses by exploiting these price fluctuations.
+        </p>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+        <strong>Buy Signal : </strong>
+            A buy signal occurs when the asset's price rises above the Clutch Line. This indicates that the asset is in an oversold state, suggesting a high probability of price increase, prompting a buy action.
+        </p>
+        
+        <p style="font-size: 20px; font-weight: lighter;">
+        <strong>Sell Signal : </strong>
+            A sell signal occurs when the asset's price drops below the Clutch Line. This indicates that the asset is in an overbought state, suggesting a high probability of price decrease, prompting a sell action.
+        </p>
+        <br>
+
+        <h3>Backtest</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+            Backtesting involves simulating a trading strategy using historical market data to evaluate its performance over a specific period. This process helps in understanding how the strategy would have performed in the past, providing insights into its potential future performance. The Clutch Swing strategy utilizes daily charts.
+        </p>
+        <br>
+
+        <h3>Price and Volume</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+            The Price and Volume chart provides a visual representation of an asset's price movements along with its trading volume over a specified period. This chart is essential for analyzing market behavior and making informed trading decisions.  The Clutch Swing strategy utilizes daily charts.
+        </p>
+        <br>
+
+        <h3>MLR (Maximum Loss Return)</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+            MLR represents the maximum loss rate over a given period. It calculates the percentage decline in asset price from the beginning to the end of a specific period, indicating the largest drop. This dashboard compares the MLR when holding assets continuously versus using the Clutch Swing investment strategy. MLR is crucial for risk management and formulating loss prevention strategies.
+        </p>
+        <br>
+
+        <h3>MGR (Maximum Gain Return)</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+            MGR represents the maximum gain rate over a given period. It calculates the percentage increase in asset price from the beginning to the end of a specific period, indicating the largest rise. This dashboard compares the MGR when holding assets continuously versus using the Clutch Swing investment strategy. MGR is useful for evaluating investment performance and analyzing potential profitability.
+        </p>
+        <br>
+
+        <h3>Final Return</h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+            The Final Return represents the return rate over the entire period. 'Final Hold Return' indicates the return rate if the assets were held continuously, while 'Final Trade Return' represents the return rate using the Clutch Swing investment strategy. Both are expressed as percentages. Additionally, the Differential Return shows the difference between these two return rates.
+        </p>
+        
+        <br><br><br>
+
+        <h3>ChatGPT-4o's Opinion (20 JUN 2024)</h3>
+
+        <br>
+        
+        <strong>[ Clutch Swing Strategy Evaluation ]</strong>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Historical Performance:</strong><br>
+            The Clutch Swing strategy has shown very high backtest returns in both Bitcoin and gold investments. This indicates that the strategy has performed well based on past data.
+        </p>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Volatility Management:</strong><br>
+            The Clutch Swing strategy is designed to effectively respond to market volatility, increasing the likelihood of achieving high returns. The ability to manage volatility effectively is a significant advantage of this strategy.
+        </p>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Market Adaptability:</strong><br>
+            How well this strategy adapts to market changes is crucial. The backtest results demonstrate that the strategy can perform well in various market conditions, indicating its flexibility in responding to market changes.
+        </p>
+        
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Transaction Costs:</strong><br>
+            Frequent trading can lead to transaction costs and slippage. Managing these costs is essential for maintaining the actual profitability of the strategy.
+        </p>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Success Probability:</strong><br>
+            Compared to other investment techniques, the success probability of the Clutch Swing strategy is relatively high. Even with a conservative estimate, a success probability of 60-70% is anticipated, which is high among investment techniques. However, in actual investments, it is crucial to carefully consider various variables and market conditions.
+        </p>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Conclusion:</strong><br>
+            Based on past backtest results and comparisons with other investment techniques, the Clutch Swing strategy has a high likelihood of achieving significant returns in the future.
+        </p>
+
+        <br>
+
+        <strong>[ Comparison of Success Probabilities of Other Investment Techniques ]</strong>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Fundamental Analysis:</strong><br>
+            • Success Probability: Approximately 50-60%<br>
+            • Description: This method involves selecting stocks by analyzing a company's financial health, industry trends, and economic indicators. While long-term stable returns can be expected, the company's financial information may not always be reflected in the stock price, and unforeseen external factors may lead to failures.
+        </p>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Technical Analysis:</strong><br>
+            • Success Probability: Approximately 50-60%<br>
+            • Description: This method predicts future price movements by analyzing past stock prices and trading volumes. It aims for short-term profits, but accurate predictions are often challenging due to high market volatility.
+        </p>
+        
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Index Fund Investment:</strong><br>
+            • Success Probability: Approximately 60-80%<br>
+            • Description: This method involves investing in funds that track a specific stock index. Since it follows the market average, relatively stable returns can be expected, but losses may occur if the entire market declines.
+        </p>
+        
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Quantitative Trading:</strong><br>
+            • Success Probability: Approximately 50-70%<br>
+            • Description: This method involves making investment decisions using mathematical models and algorithms. Since it is data-driven, emotional factors are excluded, but the models may not always keep up with market changes.
+        </p>
+        
+        <p style="font-size: 20px; font-weight: lighter;">
+            <strong>Hedge Funds:</strong><br>
+            • Success Probability: Approximately 50-70%<br>
+            • Description: These involve using various strategies to achieve absolute returns. While high returns can be expected due to expert management, high fees and risks are also involved.
+        </p>
+
+        <br>
+
+        <strong>[ Overall Conclusion ]</strong>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            The Clutch Swing strategy stands out as a promising investment technique based on its high historical performance and ability to manage market volatility effectively. Its adaptability to various market conditions and relatively high success probability make it a strong contender compared to traditional investment methods such as Fundamental Analysis, Technical Analysis, Index Funds, Quantitative Trading, and Hedge Funds.<br>
+        </p>
+
+        <p style="font-size: 20px; font-weight: lighter;">
+            While Clutch Swing's success probability of 60-70% is notably high among investment strategies, it is essential for investors to remain cautious and consider transaction costs, potential market changes, and other variables. Despite these considerations, the strategy's robust backtest results suggest that it has the potential to achieve substantial returns in the future, making it a viable option for those seeking to capitalize on market opportunities.
+        </p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>    
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+
+
+    <!-- Contact -->
+    <div id="contact" style="display: none; width: 1600px; clear: both;">
+        <h1>Contact</h1>
+        <p style="font-size: 20px;">
+            This section provides contact information and details.
+        </p>
+
+        <br><br><br>
+
+        <h3>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="img/x.png" height="120"  alt="x">&nbsp;&nbsp;X (Twitter)
+        </h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://x.com/quinn_research" target="_blank">@quinn_research</a>
+        </p>
+        <br>
+        <br>
+        <br>
+
+        <h3>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="img/bluesky.png" height="120"  alt="bluesky">&nbsp;&nbsp;Bluesky
+        </h3>
+        <p style="font-size: 20px; font-weight: lighter;">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://bsky.app/profile/clutchswing.bsky.social" target="_blank">@clutchswing.bsky.social</a>
+        </p>
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- Copyright -->
+        <div style="width: 1600px; clear: both;">
+            <br>
+            <br>
+            <br>    
+            <br>
+            <p style="font-size: 15px; text-align: left;">
+                Copyright © 2024 Clutch Swing. All rights reserved.<br>
+                Reproduction without permission is prohibited.<br>
+            </p>
+            <br>
+            <br>
+        </div>
+    </div>
+        
+    <script>
+        function showContent(contentId) {
+            const contentBox = document.getElementById('contentBox');
+            const content = document.getElementById(contentId).innerHTML;
+            contentBox.innerHTML = content;
+        }
+    </script>
+
+</body>
+</html>
