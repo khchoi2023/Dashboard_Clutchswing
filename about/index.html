@@ -57,7 +57,8 @@
 </head>       
 
 <body>
-<div class="side-bar">
+<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+<div class="side-bar" id="site-menu">
         <div class="side-bar__icon-box">
             <div class="side-bar__icon-1">
                 <div></div>
@@ -83,7 +84,7 @@
         
     </div>
 
-<div class="content-box" id="contentBox" style="width: 1600px; clear: both;">
+<div class="content-box" id="contentBox" style="clear: both;">
         <h1>Contact</h1>
         <p style="font-size: 20px;">
             This section provides contact information and details.
@@ -92,12 +93,12 @@
         <br><br><br>
 
         <h3>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
             <img src="../img/x.png" height="120"  alt="x">&nbsp;&nbsp;X (Twitter)
         </h3>
         <p style="font-size: 20px; font-weight: lighter;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            
             <a href="https://x.com/quinn_research" target="_blank">@quinn_research</a>
         </p>
         <br>
@@ -105,12 +106,12 @@
         <br>
 
         <h3>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
             <img src="../img/bluesky.png" height="120"  alt="bluesky">&nbsp;&nbsp;Bluesky
         </h3>
         <p style="font-size: 20px; font-weight: lighter;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            
+            
             <a href="https://bsky.app/profile/clutchswing.bsky.social" target="_blank">@clutchswing.bsky.social</a>
         </p>
         <br>
@@ -125,7 +126,7 @@
         <br>
 
         <!-- Copyright -->
-        <div style="width: 1600px; clear: both;">
+        <div style="width: 100%; clear: both;">
             <br>
             <br>
             <br>    
@@ -138,5 +139,6 @@
             <br>
         </div>
     </div>
+<script src="../assets/mobile.js" defer></script>
 </body>
 </html>

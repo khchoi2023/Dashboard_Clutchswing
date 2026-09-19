@@ -65,7 +65,8 @@
 </head>       
 
 <body>
-<div class="side-bar">
+<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+<div class="side-bar" id="site-menu">
         <div class="side-bar__icon-box">
             <div class="side-bar__icon-1">
                 <div></div>
@@ -91,7 +92,7 @@
         
     </div>
 
-<div class="content-box" id="contentBox" style="width: 1600px; clear: both;">
+<div class="content-box" id="contentBox" style="clear: both;">
         <div class="home-copy">
             <h1>Clutch Swing Dashboard</h1>
             <p class="home-subtitle">Stock &amp; Crypto Backtests: Strategy vs. Buy and Hold</p>
@@ -143,7 +144,7 @@
         </div>
 
         <!-- Copyright -->
-        <div style="width: 1600px; clear: both;">
+        <div style="width: 100%; clear: both;">
             <br>
             <br>
             <br>
@@ -156,5 +157,6 @@
             <br>
         </div>
     </div>
+<script src="assets/mobile.js" defer></script>
 </body>
 </html>

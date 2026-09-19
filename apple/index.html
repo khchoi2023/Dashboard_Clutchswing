@@ -57,7 +57,8 @@
 </head>       
 
 <body>
-<div class="side-bar">
+<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu</button>
+<div class="side-bar" id="site-menu">
         <div class="side-bar__icon-box">
             <div class="side-bar__icon-1">
                 <div></div>
@@ -83,7 +84,7 @@
         
     </div>
 
-<div class="content-box" id="contentBox" style="width: 1600px; clear: both;">
+<div class="content-box" id="contentBox" style="clear: both;">
         <h1>Dashboard for APPLE</h1>
         <p style="font-size: 20px;">
             Apple designs high-performance electronics and software, leading the market with products like the iPhone, iPad, Mac, and Apple Watch.<br>
@@ -92,53 +93,55 @@
         <br>
         </p>
 
-        <div style="height: 450px; width: 1600px; clear: both;">
-            <img style="width: 800px; float:left;" src="../img/aapl/aapl_backtest.png" alt="APPLE Backtest Chart">
-            <img style="width: 800px; float:left;" src="../img/aapl/aapl_close_vol.png" alt="APPLE Price and Volume Chart">
+        <div class="chart-row chart-row--overview" style="width: 100%; clear: both; aspect-ratio: 1600 / 450;">
+            <img style="height: auto; width: 50%; float:left;" src="../img/aapl/aapl_backtest.png" alt="APPLE Backtest Chart" width="1000" height="500" loading="eager" decoding="async">
+            <img style="height: auto; width: 50%; float:left;" src="../img/aapl/aapl_close_vol.png" alt="APPLE Price and Volume Chart" width="1000" height="500" loading="eager" decoding="async">
         </div>
 
-        <div style="height: 300px; width: 1600px; clear: both;">
-            <img style="width: 200px; float:left;" src="../img/aapl/aapl_mlr_donut_annual.png" alt="APPLE Annual MLR Donut Chart">
-            <img style="width: 200px; float:left;" src="../img/aapl/aapl_mlr_donut_monthly.png" alt="APPLE Monthly MLR Donut Chart">
-            <img style="width: 200px; float:left;" src="../img/aapl/aapl_mlr_donut_weekly.png" alt="APPLE Weekly MLR Donut Chart">
-            <img style="width: 1000px; float:left;" src="../img/aapl/aapl_latest_signal.png" alt="APPLE Clutch Swing Signal">
+        <div class="metrics-group">
+<div class="chart-row chart-row--metrics" style="width: 100%; clear: both; aspect-ratio: 1600 / 300;">
+            <img style="height: auto; width: 12.5%; float:left;" src="../img/aapl/aapl_mlr_donut_annual.png" alt="APPLE Annual MLR Donut Chart" width="175" height="226" loading="lazy" decoding="async">
+            <img style="height: auto; width: 12.5%; float:left;" src="../img/aapl/aapl_mlr_donut_monthly.png" alt="APPLE Monthly MLR Donut Chart" width="175" height="226" loading="lazy" decoding="async">
+            <img style="height: auto; width: 12.5%; float:left;" src="../img/aapl/aapl_mlr_donut_weekly.png" alt="APPLE Weekly MLR Donut Chart" width="175" height="226" loading="lazy" decoding="async">
+            <img style="height: auto; width: 62.5%; float:left;" src="../img/aapl/aapl_latest_signal.png" alt="APPLE Clutch Swing Signal" width="835" height="210" loading="lazy" decoding="async">
         </div>
 
-        <div style="height: 300px; width: 1600px; clear: both;">
-            <img style="width: 200px; float:left;" src="../img/aapl/aapl_mgr_donut_annual.png" alt="APPLE Annual MGR Donut Chart">
-            <img style="width: 200px; float:left;" src="../img/aapl/aapl_mgr_donut_monthly.png" alt="APPLE Monthly MGR Donut Chart">
-            <img style="width: 200px; float:left;" src="../img/aapl/aapl_mgr_donut_weekly.png" alt="APPLE Weekly MGR Donut Chart">
-            <img style="width: 1000px; float:left;" src="../img/aapl/aapl_final_return_bar.png" alt="APPLE Final Return Bar Chart">
+        <div class="chart-row chart-row--metrics" style="width: 100%; clear: both; aspect-ratio: 1600 / 300;">
+            <img style="height: auto; width: 12.5%; float:left;" src="../img/aapl/aapl_mgr_donut_annual.png" alt="APPLE Annual MGR Donut Chart" width="175" height="226" loading="lazy" decoding="async">
+            <img style="height: auto; width: 12.5%; float:left;" src="../img/aapl/aapl_mgr_donut_monthly.png" alt="APPLE Monthly MGR Donut Chart" width="175" height="226" loading="lazy" decoding="async">
+            <img style="height: auto; width: 12.5%; float:left;" src="../img/aapl/aapl_mgr_donut_weekly.png" alt="APPLE Weekly MGR Donut Chart" width="175" height="226" loading="lazy" decoding="async">
+            <img style="height: auto; width: 62.5%; float:left;" src="../img/aapl/aapl_final_return_bar.png" alt="APPLE Final Return Bar Chart" width="889" height="209" loading="lazy" decoding="async">
+        </div>
         </div>
 
-        <div style="width: 1600px; clear: both;">
-            <img style="width: 500px; float:left;" src="../img/aapl/aapl_final_trade_return.png" alt="APPLE Final Trade Return">
-            <img style="width: 500px; float:left;" src="../img/aapl/aapl_final_hole_return.png" alt="APPLE Final Hold Return">
-            <img style="width: 500px; float:left;" src="../img/aapl/aapl_final_diff_return.png" alt="APPLE Final Differential Return">
+        <div class="chart-row chart-row--totals" style="width: 100%; clear: both;">
+            <img style="height: auto; width: 31.25%; float:left;" src="../img/aapl/aapl_final_trade_return.png" alt="APPLE Final Trade Return" width="468" height="140" loading="lazy" decoding="async">
+            <img style="height: auto; width: 31.25%; float:left;" src="../img/aapl/aapl_final_hole_return.png" alt="APPLE Final Hold Return" width="468" height="140" loading="lazy" decoding="async">
+            <img style="height: auto; width: 31.25%; float:left;" src="../img/aapl/aapl_final_diff_return.png" alt="APPLE Final Differential Return" width="490" height="140" loading="lazy" decoding="async">
         </div>
 
-        <div style="width: 1600px; clear: both;">
+        <div class="chart-row chart-row--periods" style="width: 100%; clear: both;">
             <br><br>
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_1y.png" alt="APPLE Backtest Last 1 Year(s)">
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_3y.png" alt="APPLE Backtest Last 3 Year(s)">
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_5y.png" alt="APPLE Backtest Last 5 Year(s)">
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_7y.png" alt="APPLE Backtest Last 7 Year(s)">
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_9y.png" alt="APPLE Backtest Last 9 Year(s)">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_1y.png" alt="APPLE Backtest Last 1 Year(s)" width="500" height="500" loading="lazy" decoding="async">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_3y.png" alt="APPLE Backtest Last 3 Year(s)" width="500" height="500" loading="lazy" decoding="async">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_5y.png" alt="APPLE Backtest Last 5 Year(s)" width="500" height="500" loading="lazy" decoding="async">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_7y.png" alt="APPLE Backtest Last 7 Year(s)" width="500" height="500" loading="lazy" decoding="async">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_9y.png" alt="APPLE Backtest Last 9 Year(s)" width="500" height="500" loading="lazy" decoding="async">
             <br>
         </div>
 
-        <div style="width: 1600px; clear: both;">
+        <div class="chart-row chart-row--periods" style="width: 100%; clear: both;">
             <br>
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_log_1y.png" alt="APPLE Log Backtest Last 1 Year(s)">
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_log_3y.png" alt="APPLE Log Backtest Last 3 Year(s)">
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_log_5y.png" alt="APPLE Log Backtest Last 5 Year(s)">
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_log_7y.png" alt="APPLE Log Backtest Last 7 Year(s)">
-            <img style="width: 300px; float:left;" src="../img/aapl/aapl_backtest_log_9y.png" alt="APPLE Log Backtest Last 9 Year(s)">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_log_1y.png" alt="APPLE Log Backtest Last 1 Year(s)" width="500" height="500" loading="lazy" decoding="async">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_log_3y.png" alt="APPLE Log Backtest Last 3 Year(s)" width="500" height="500" loading="lazy" decoding="async">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_log_5y.png" alt="APPLE Log Backtest Last 5 Year(s)" width="500" height="500" loading="lazy" decoding="async">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_log_7y.png" alt="APPLE Log Backtest Last 7 Year(s)" width="500" height="500" loading="lazy" decoding="async">
+            <img style="height: auto; width: 18.75%; float:left;" src="../img/aapl/aapl_backtest_log_9y.png" alt="APPLE Log Backtest Last 9 Year(s)" width="500" height="500" loading="lazy" decoding="async">
             <br>
         </div>
 
         <!-- Apple performance summary -->
-        <section data-summary-src="../summaries/aapl.csv" aria-busy="true" aria-labelledby="aapl-summary-title" style="width: 1500px; clear: both; padding-top: 40px; font-size: 18px; font-weight: normal; line-height: 1.7;">
+        <section data-summary-src="../summaries/aapl.csv" aria-busy="true" aria-labelledby="aapl-summary-title" style="width: 100%; max-width: 1500px; clear: both; padding-top: 40px; font-size: 18px; font-weight: normal; line-height: 1.7;">
             <h2 id="aapl-summary-title" style="font-size: 26px;">Understanding the Apple backtest</h2>
             <p>These Apple (AAPL) charts compare the historical performance of the Clutch Swing strategy with buying and holding Apple over the same analysis period. Each period starts with the same initial asset value.</p>
             <p>The period return charts show cumulative returns in percent. The logarithmic charts show an asset index starting at 100: an index of 150 represents a 50% gain, while 80 represents a 20% loss. Blank areas indicate unavailable history.</p>
@@ -147,6 +150,7 @@
             <p>Price data through <time data-summary-date>loading</time>. Returns are cumulative, not annualized. The dates below show the actual calculation period.</p>
             <p data-summary-status role="status">Loading return data...</p>
             <noscript><p>Enable JavaScript to view the return table.</p></noscript>
+            <div class="table-scroll" role="region" aria-label="Period return table" tabindex="0">
             <table style="width: 100%; border-collapse: collapse; font-size: 18px; font-variant-numeric: tabular-nums;">
                 <caption style="text-align: left; padding-bottom: 12px;">Clutch Swing strategy vs. buy and hold &mdash; Apple (AAPL)</caption>
                 <thead style="background: #f3f4f6;">
@@ -160,6 +164,7 @@
                 </thead>
                 <tbody></tbody>
             </table>
+            </div>
             <p style="font-size: 16px; color: #555;">Difference = strategy return minus buy-and-hold return, in percentage points (pp). Values are rounded independently to two decimal places.</p>
         </section>
 
@@ -175,7 +180,7 @@
         </aside>
 
         <!-- Copyright -->
-        <div style="width: 1600px; clear: both;">
+        <div style="width: 100%; clear: both;">
             <br>
             <br>
             <br>
@@ -189,5 +194,6 @@
         </div>
     </div>
 <script src="../assets/summary.js" defer></script>
+<script src="../assets/mobile.js" defer></script>
 </body>
 </html>
