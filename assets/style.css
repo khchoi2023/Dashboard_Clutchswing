@@ -148,3 +148,26 @@
             min-height: 70vh;
         }
     
+/* Manual ads stay in normal document flow; their height remains fluid. */
+.page-ad {
+    clear: both;
+    box-sizing: border-box;
+    width: min(1000px, calc(100vw - 108px));
+    margin: 48px 0;
+    padding: 16px 0;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    font-weight: normal;
+}
+.page-ad-label {
+    margin: 0 0 12px;
+    color: #666;
+    font: 12px/1.4 Arial, sans-serif;
+    text-align: center;
+}
+@media (max-width: 600px) {
+    .page-ad {
+        width: calc(100vw - 40px);
+        margin-left: calc(var(--side-bar-width) / -4);
+    }
+}
